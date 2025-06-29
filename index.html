@@ -10,17 +10,17 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gajiandollar.netlify.app/"> <!-- Ganti dengan URL Netlify Anda nanti -->
+    <meta property="og:url" content="https://gajiandollar.netlify.app/"> 
     <meta property="og:title" content="Pengalaman Saya Menghasilkan Dolar dari Rumah">
     <meta property="og:description" content="Sebuah panduan praktis untuk mengubah skill yang sudah Anda miliki menjadi keahlian remote yang dihargai.">
-    <meta property="og:image" content="https://i.ibb.co/4gM5cNXd/1.jpg">
+    <meta property="og:image" content="images/1.jpg"> 
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://gajiandollar.netlify.app/"> <!-- Ganti dengan URL Netlify Anda nanti -->
+    <meta property="twitter:url" content="https://gajiandollar.netlify.app/"> 
     <meta property="twitter:title" content="Pengalaman Saya Menghasilkan Dolar dari Rumah">
     <meta property="twitter:description" content="Sebuah panduan praktis untuk mengubah skill yang sudah Anda miliki menjadi keahlian remote yang dihargai.">
-    <meta property="twitter:image" content="https://i.ibb.co/4gM5cNXd/1.jpg">
+    <meta property="twitter:image" content="images/1.jpg">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -33,15 +33,15 @@
             font-family: 'Inter', sans-serif;
             background-color: #FFFFFF; 
             color: #1F2937;
-            /* UPDATED: Transparent Grid Pattern with lower opacity */
+            /* Transparent Grid Pattern */
             background-image: 
                 linear-gradient(rgba(229, 231, 235, 0.3) 1px, transparent 1px),
                 linear-gradient(to right, rgba(229, 231, 235, 0.3) 1px, transparent 1px);
-            background-size: 2.5rem 2.5rem; /* Ukuran grid sedikit diperbesar */
+            background-size: 2.5rem 2.5rem; 
         }
         .callout {
-            background-color: #f3f4f6; /* gray-100 */
-            border: 1px solid #e5e7eb; /* gray-200 */
+            background-color: #f3f4f6;
+            border: 1px solid #e5e7eb;
             border-radius: 0.5rem;
             padding: 1rem 1.25rem;
             display: flex;
@@ -65,40 +65,27 @@
         details[open] summary .arrow-down {
             transform: rotate(180deg);
         }
-        /* Social Proof Pop-up */
-        #social-proof {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background-color: white;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            display: flex;
-            align-items: center;
-            z-index: 50;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease-in-out;
-            visibility: hidden;
-        }
-        #social-proof.show {
-            opacity: 1;
-            transform: translateY(0);
-            visibility: visible;
-        }
-        /* Carousel Styles */
+        /* NEW Carousel Styles - Pure CSS Scroll Snap */
         .carousel-container {
-            overflow: hidden;
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: 100%;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
         }
-        .carousel-track {
-            display: flex;
-            transition: transform 0.3s ease-in-out;
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+        }
+        .carousel-container {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
         }
         .carousel-slide {
-            flex: 0 0 100%;
-            min-width: 100%;
+            scroll-snap-align: center;
         }
+        
         /* Sticky CTA */
         #sticky-cta {
             position: fixed;
@@ -115,7 +102,7 @@
         #sticky-cta.show {
             bottom: 0;
         }
-        /* UPDATED: Softer but more visible Text Shadow */
+        /* Soft Text Shadow */
         .soft-shadow {
             text-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
         }
@@ -139,33 +126,12 @@
             </a>
         </header>
 
-        <!-- New Section: Mungkin Cerita Kita Mirip? -->
-        <section class="my-20">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-6 soft-shadow">Mungkin Cerita Kita Mirip?</h2>
-             <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto soft-shadow">Sebelum saya lanjut, coba cek, apakah kamu merasakan hal yang sama?</p>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="callout"><span class="callout-icon">🏢</span><div><span class="font-semibold text-gray-900">Karyawan Kantoran?</span> Merasa gaji stagnan dan butuh sampingan yang lebih berarti.</div></div>
-                <div class="callout"><span class="callout-icon">🎓</span><div><span class="font-semibold text-gray-900">Lulusan Baru?</span> Bingung mau mulai dari mana, butuh skill nyata yang relevan.</div></div>
-                <div class="callout"><span class="callout-icon">💼</span><div><span class="font-semibold text-gray-900">Freelancer Lelah?</span> Capek banting harga di 'kolam' yang sudah terlalu ramai.</div></div>
-                <div class="callout"><span class="callout-icon">🔍</span><div><span class="font-semibold text-gray-900">Orang yang Teliti?</span> Kamu tipe yang suka merapikan sesuatu dan punya logika yang baik. Skill kamu yang dicari industri AI.</div></div>
-            </div>
-             <p class="text-center text-gray-600 mt-8 soft-shadow">Jika kamu mengangguk setuju pada salah satunya, mungkin pengalaman saya ini bisa menjadi jawaban.</p>
-        </section>
-
-        <!-- New Section: Siapa Saya & Kenapa Panduan Ini Ada -->
-        <section class="my-20 text-center">
-             <h2 class="text-3xl font-bold text-gray-900 mb-4 soft-shadow">Siapa Saya & Kenapa Panduan Ini Ada</h2>
-             <div class="max-w-2xl mx-auto text-gray-700 space-y-4 text-left md:text-center soft-shadow">
-                <p>Saya seorang praktisi yang memulai dari nol dan menghabiskan waktu bertahun-tahun untuk <em>trial-and-error</em>. Panduan ini adalah rangkuman dari semua strategi yang berhasil dan kesalahan yang harus dihindari, agar kamu tidak perlu mengulanginya.</p>
-             </div>
-        </section>
-
         <!-- What You'll Get Section -->
         <section class="my-20">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-10 soft-shadow">Apa Saja yang Akan Kita Pelajari Bersama?</h2>
             
             <div class="mb-12 flex justify-center">
-                <img src="https://i.ibb.co/4gM5cNXd/1.jpg" alt="Cover Panduan AI" class="rounded-lg shadow-2xl max-w-md w-full" onerror="this.onerror=null;this.src='https://placehold.co/400x500/111827/ffffff?text=Cover+Tidak+Tersedia';">
+                <img src="images/1.jpg" alt="Cover Panduan AI" class="rounded-lg shadow-2xl max-w-md w-full" onerror="this.onerror=null;this.src='https://placehold.co/400x500/111827/ffffff?text=Cover+Tidak+Tersedia';">
             </div>
 
             <div class="space-y-4">
@@ -219,12 +185,10 @@
             <div class="mt-16">
                 <h3 class="text-2xl font-bold text-center text-gray-900 mb-6 soft-shadow">Biarkan Bukti Pembayaran Saya yang Bicara</h3>
                 <div class="relative max-w-lg mx-auto">
-                    <div class="carousel-container rounded-lg shadow-lg">
-                        <div id="carousel-track" class="carousel-track">
-                            <div class="carousel-slide"><img loading="lazy" src="https://i.ibb.co/bMn1v9V0/6.jpg" alt="Bukti Pembayaran 1" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Gambar+Error';"></div>
-                            <div class="carousel-slide"><img loading="lazy" src="https://i.ibb.co/rfZcb5vx/7.jpg" alt="Bukti Pembayaran 2" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Gambar+Error';"></div>
-                            <div class="carousel-slide"><img loading="lazy" src="https://i.ibb.co/HLBZs96G/8.jpg" alt="Bukti Pembayaran 3" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Gambar+Error';"></div>
-                        </div>
+                    <div id="carousel-container" class="carousel-container rounded-lg shadow-lg">
+                        <div id="slide1" class="carousel-slide"><img src="images/6.jpg" alt="Bukti Pembayaran 1" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Gambar+Error';"></div>
+                        <div id="slide2" class="carousel-slide"><img src="images/7.jpg" alt="Bukti Pembayaran 2" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Gambar+Error';"></div>
+                        <div id="slide3" class="carousel-slide"><img src="images/8.jpg" alt="Bukti Pembayaran 3" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Gambar+Error';"></div>
                     </div>
                     <button id="prevBtn" class="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-4 bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-md hover:bg-white text-gray-900">&lt;</button>
                     <button id="nextBtn" class="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-4 bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-md hover:bg-white text-gray-900">&gt;</button>
@@ -272,7 +236,7 @@
             </div>
         </section>
 
-        <!-- FAQ Section (UPDATED) -->
+        <!-- FAQ Section -->
         <section class="my-20 max-w-2xl mx-auto">
              <h2 class="text-3xl font-bold text-center text-gray-900 mb-10 soft-shadow">Pertanyaan yang Sering Muncul</h2>
              <div class="space-y-4">
@@ -295,15 +259,7 @@
                     </p>
                 </details>
                 <details class="group bg-gray-50 p-4 rounded-lg"> <summary class="flex justify-between items-center font-semibold text-gray-800 cursor-pointer"> Beneran bisa dapet 10 juta sebulan? <span class="arrow-down transition-transform duration-300">↓</span> </summary> <p class="text-gray-600 mt-4"> Sangat mungkin. Saya pribadi sudah melewatinya. Tapi, ini bukan skema instan. Di awal, kamu mungkin dapat beberapa ratus dolar. Tapi dengan konsistensi dan kualitas, angka $500-$700 (setara 8-11 juta) per bulan itu target yang sangat realistis untuk dicapai dalam beberapa bulan. Semua tergantung usaha dan kualitas kerja kamu. </p> </details>
-                 <details class="group bg-gray-50 p-4 rounded-lg">
-                    <summary class="flex justify-between items-center font-semibold text-gray-800 cursor-pointer">
-                        Apakah saya butuh latar belakang IT?
-                        <span class="arrow-down transition-transform duration-300">↓</span>
-                    </summary>
-                    <p class="text-gray-600 mt-4">
-                        Tidak. Ini bukan <em>coding</em>. Ini lebih ke skill pemahaman bahasa, logika, dan ketelitian. Selama kamu bisa ikutin instruksi, kamu bisa.
-                    </p>
-                </details>
+                 <details class="group bg-gray-50 p-4 rounded-lg"> <summary class="flex justify-between items-center font-semibold text-gray-800 cursor-pointer"> Kalau AI makin pintar, apakah pekerjaan ini akan hilang? <span class="arrow-down transition-transform duration-300">↓</span> </summary> <p class="text-gray-600 mt-4"> Justru sebaliknya. Semakin pintar sebuah AI, semakin butuh manusia untuk mengawasi, mengoreksi, dan memastikan outputnya sesuai dengan nilai-nilai kemanusiaan. Pekerjaan ini adalah tentang 'menjaga' AI, dan itu akan selalu dibutuhkan. </p> </details>
             </div>
         </section>
 
@@ -315,14 +271,7 @@
         </footer>
     </div>
     
-    <!-- Social Proof & Sticky CTA -->
-    <div id="social-proof">
-        <span class="text-2xl mr-4">🎉</span>
-        <div>
-            <p id="social-proof-full-text" class="text-sm"></p>
-        </div>
-    </div>
-    
+    <!-- Sticky CTA -->
     <div id="sticky-cta">
         <div class="max-w-3xl mx-auto px-6 flex justify-center items-center">
              <a href="#harga" class="w-full md:w-auto bg-blue-600 text-white font-bold text-center text-base md:text-lg px-6 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition-all transform hover:scale-105">
@@ -335,58 +284,31 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            function startSocialProof() {
-                const names = ["Andi", "Citra", "Budi", "Dewi", "Eko", "Fitri", "Gilang", "Hana"];
-                const cities = ["Jakarta", "Bandung", "Surabaya", "Yogyakarta", "Medan", "Semarang"];
-                const times = ["kemarin", "pagi ini", "2 jam yang lalu", "kemarin lusa", "sore tadi"];
-                const socialProofEl = document.getElementById('social-proof');
-                const socialProofFullTextEl = document.getElementById('social-proof-full-text');
-
-                if (!socialProofEl || !socialProofFullTextEl) return;
-
-                setInterval(() => {
-                    const randomName = names[Math.floor(Math.random() * names.length)];
-                    const randomCity = cities[Math.floor(Math.random() * cities.length)];
-                    const randomTime = times[Math.floor(Math.random() * times.length)];
-                    
-                    socialProofFullTextEl.innerHTML = `<span class="font-bold text-gray-800">${randomName}</span> dari ${randomCity} telah membeli panduan ini <span class="text-gray-500 font-normal">${randomTime}</span>.`;
-                    socialProofEl.classList.add('show');
-
-                    setTimeout(() => {
-                        socialProofEl.classList.remove('show');
-                    }, 5000); 
-                }, 15000); 
-            }
-
+            /**
+             * Carousel Logic - Pure CSS Scroll Snap driven by JS
+             */
             function setupCarousel() {
-                const track = document.getElementById('carousel-track');
-                if (!track) return;
-                const slides = Array.from(track.children);
+                const container = document.getElementById('carousel-container');
+                if (!container) return;
                 const nextButton = document.getElementById('nextBtn');
                 const prevButton = document.getElementById('prevBtn');
-                let currentIndex = 0;
-
-                if (slides.length === 0 || !nextButton || !prevButton) return;
-
-                const moveToSlide = (index) => {
-                     track.style.transform = `translateX(-${index * 100}%)`;
-                };
                 
+                if (!nextButton || !prevButton) return;
+
                 nextButton.addEventListener('click', () => {
-                    currentIndex = (currentIndex + 1) % slides.length;
-                    moveToSlide(currentIndex);
+                    const scrollAmount = container.offsetWidth;
+                    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
                 });
 
                 prevButton.addEventListener('click', () => {
-                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                    moveToSlide(currentIndex);
+                    const scrollAmount = container.offsetWidth;
+                    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
                 });
-                
-                setInterval(() => {
-                    nextButton.click();
-                }, 5000); 
             }
             
+            /**
+             * Sticky CTA Logic
+             */
             function setupStickyCTA() {
                 const stickyCTA = document.getElementById('sticky-cta');
                 const header = document.getElementById('header');
@@ -419,7 +341,7 @@
                 observer.observe(pricingSection);
             }
 
-            startSocialProof();
+            // Initialize features
             setupCarousel();
             setupStickyCTA();
         });
